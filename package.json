@@ -1,0 +1,27 @@
+{
+  "name": "anime_list_backend",
+  "version": "1.0.0",
+  "description": "Simple backend service for anime_list_app",
+  "main": "./src/app.js",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danlyg/anime_list_backend.git"
+  },
+  "author": "Daniel Gih",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danlyg/anime_list_backend/issues"
+  },
+  "homepage": "https://github.com/danlyg/anime_list_backend#readme"
+}
