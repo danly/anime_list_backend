@@ -60,6 +60,10 @@ app.post("/anime-list/new", function(req, res) {
 
   newAnime.title = req.body.title;
   newAnime.hum_id = req.body.hum_id;
+  newAnime.status = req.body.status;
+  newAnime.episode_length = req.body.episode_length;
+  newAnime.cover_image = req.body.cover_image;
+  newAnime.synopsis = req.body.synopsis;
 
   db.AnimeList.create(newAnime, function(err, anime) {
     if(err) {
