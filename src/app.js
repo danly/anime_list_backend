@@ -29,6 +29,9 @@ GET all anime
 */
 app.get("/anime-list", function(req, res) {
   db.AnimeList.find({}, function(err, list) {
+    if(err) {
+      res.send(err);
+    }
     res.json(list);
   });
 });
@@ -46,9 +49,11 @@ app.get("/anime-list/:id", function(req, res) {
 });
 
 /**
+  POST
   title: String
   watched: Boolean
   hum_id: Number
+  response sends a list
 */
 app.post("/anime-list/new", function(req, res) {
   var newAnime = {};
@@ -56,11 +61,16 @@ app.post("/anime-list/new", function(req, res) {
   newAnime.title = req.body.title;
   newAnime.hum_id = req.body.hum_id;
 
-  db.AnimeList.create(newAnime, function(err, list) {
+  db.AnimeList.create(newAnime, function(err, anime) {
     if(err) {
       res.send(err);
     }
-    res.status(201).send(list);
+    db.AnimeList.find({}, function(err, list) {
+      if(err) {
+        res.send(err);
+      }
+      res.status(201).json(list);
+    });
   });
 });
 
